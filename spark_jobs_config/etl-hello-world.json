@@ -1,0 +1,25 @@
+{
+    "name": "etl-hello-world",
+    "virtualClusterId": "<virtual-cluster-id>",
+    "executionRoleArn": "<execution-role-arn>",
+    "releaseLabel": "emr-6.5.0-latest",
+    "jobDriver": {
+        "sparkSubmitJobDriver": {
+            "entryPoint": "local:///my_src/spark_jobs/main_v1.py",
+            "entryPointArguments": [
+                "etl-hello-world"
+            ],
+            "sparkSubmitParameters": "--conf spark.executor.instances=1 --conf spark.executor.memory=2G --conf spark.executor.cores=2 --conf spark.driver.cores=1 --conf spark.driver.memory=2G"
+        }
+    },
+    "configurationOverrides": {
+        "applicationConfiguration": [
+            {
+                "classification": "spark-defaults",
+                "properties": {
+                    "spark.kubernetes.container.image": "<container-image>"
+                }
+            }
+        ]
+    }
+}

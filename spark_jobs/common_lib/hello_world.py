@@ -5,5 +5,5 @@
 
 import socket
 
-def print_hostname():
-    print(socket.gethostname())
+def get_hostname() -> str:
+    return socket.gethostname()

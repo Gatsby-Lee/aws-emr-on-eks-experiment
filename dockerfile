@@ -5,6 +5,7 @@
 #
 # references
 # - https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/docker-custom-images-steps.html
+# - Base Image Region: https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/docker-custom-images-tag.html
 ##
 # ECR us-west-2: 895885662937
 FROM 895885662937.dkr.ecr.us-west-2.amazonaws.com/spark/emr-6.5.0:latest

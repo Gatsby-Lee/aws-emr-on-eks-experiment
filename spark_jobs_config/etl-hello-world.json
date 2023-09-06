@@ -5,11 +5,11 @@
     "releaseLabel": "emr-6.5.0-latest",
     "jobDriver": {
         "sparkSubmitJobDriver": {
-            "entryPoint": "local:///my_src/spark_jobs/main_v1.py",
+            "entryPoint": "local:///my_src/spark_jobs/main_exp_custom_module_in_udf.py",
             "entryPointArguments": [
                 "etl-hello-world"
             ],
-            "sparkSubmitParameters": "--conf spark.executor.instances=1 --conf spark.executor.memory=2G --conf spark.executor.cores=2 --conf spark.driver.cores=1 --conf spark.driver.memory=2G"
+            "sparkSubmitParameters": "--conf spark.executor.instances=1 --conf spark.executor.memory=2G --conf spark.executor.cores=2 --conf spark.driver.cores=1 --conf spark.driver.memory=2G --py-files local:///my_src/dependency_packages.zip"
         }
     },
     "configurationOverrides": {

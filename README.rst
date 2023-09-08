@@ -21,3 +21,19 @@ Build Docker Image
 
     # Push Image to Amazon ECR
     docker push <your-aws-account-id>.dkr.ecr.us-west-2.amazonaws.com/<your-ecr-repo-name>:<image-tag>
+
+
+Submit Spark Job by AWS CLI
+---------------------------
+
+.. code-block:: bash
+
+    # Update spark_jobs_config/etl-hello-world.json
+    # - virtual-cluster-id
+    # - execution-role-arn
+    # - spark-container-image
+    aws emr-containers start-job-run \
+        --cli-input-json file://./spark_jobs_config/exp_custom_module_in_udf.json
+
+    aws emr-containers list-job-runs \
+        --virtual-cluster-id <virtual-cluster-id>
